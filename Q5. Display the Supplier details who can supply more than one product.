@@ -1,0 +1,7 @@
+select * from supplier;
+select * from supplier_pricing order by SUPP_ID;
+select SUPP_ID, count(SUPP_ID) 'NoOfProducts' from supplier_pricing group by SUPP_ID;
+select * from supplier where SUPP_ID IN (
+select supp_id from supplier_pricing group by SUPP_ID
+having count(SUPP_ID) > 1
+)
