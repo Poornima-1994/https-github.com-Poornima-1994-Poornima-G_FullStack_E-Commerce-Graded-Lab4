@@ -1,3 +1,6 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DisplaySupplierDetails`()
+BEGIN
+
 select S.SUPP_NAME, SP_RO_2.*,
 
 CASE
@@ -21,3 +24,5 @@ group by supp_id
 ON S.SUPP_ID = SP_RO_2.SUPP_ID;
 
 
+
+END
